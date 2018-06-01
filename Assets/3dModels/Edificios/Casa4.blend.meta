@@ -1,0 +1,204 @@
+fileFormatVersion: 2
+guid: 1fa771742b42cb347b45b2a43e21cbf4
+timeCreated: 1524152129
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Adorno
+    100002: //RootNode
+    100004: CasasPrueba
+    100006: Cube
+    100008: Cube_007
+    100010: Cube_009
+    100012: Cube_016
+    100014: Cube_017
+    100016: Plane
+    100018: Plane_001
+    100020: Plane_002
+    100022: Plane_003
+    100024: Plane_004
+    100026: Plane_005
+    100028: Plane_006
+    100030: Plane_007
+    100032: Tejado
+    400000: Adorno
+    400002: //RootNode
+    400004: CasasPrueba
+    400006: Cube
+    400008: Cube_007
+    400010: Cube_009
+    400012: Cube_016
+    400014: Cube_017
+    400016: Plane
+    400018: Plane_001
+    400020: Plane_002
+    400022: Plane_003
+    400024: Plane_004
+    400026: Plane_005
+    400028: Plane_006
+    400030: Plane_007
+    400032: Tejado
+    2300000: Adorno
+    2300002: CasasPrueba
+    2300004: Cube
+    2300006: Cube_007
+    2300008: Cube_009
+    2300010: Cube_016
+    2300012: Cube_017
+    2300014: Plane
+    2300016: Plane_001
+    2300018: Plane_002
+    2300020: Plane_003
+    2300022: Plane_004
+    2300024: Plane_005
+    2300026: Plane_006
+    2300028: Plane_007
+    2300030: Tejado
+    3300000: Adorno
+    3300002: CasasPrueba
+    3300004: Cube
+    3300006: Cube_007
+    3300008: Cube_009
+    3300010: Cube_016
+    3300012: Cube_017
+    3300014: Plane
+    3300016: Plane_001
+    3300018: Plane_002
+    3300020: Plane_003
+    3300022: Plane_004
+    3300024: Plane_005
+    3300026: Plane_006
+    3300028: Plane_007
+    3300030: Tejado
+    4300000: Plane_007
+    4300002: Plane_006
+    4300004: Plane_005
+    4300006: Plane_004
+    4300008: Plane_003
+    4300010: Plane_002
+    4300012: Plane_001
+    4300014: Plane
+    4300016: Cube_017
+    4300018: Cube_009
+    4300020: Cube
+    4300022: Cube_016
+    4300024: Cube_007
+    4300026: Adorno
+    4300028: CasasPrueba
+    4300030: Tejado
+    7400000: Default Take
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cristal
+    second: {fileID: 2100000, guid: 33e1b93a7eb52514bafe64c425e3d1f9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Madera__tree_texture_jpg
+    second: {fileID: 2100000, guid: 4ad7ca8d700f017419e6191c9cce7ee7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: None__Cuerda_png
+    second: {fileID: 2100000, guid: 33ba7ddc16e9d3344a868dc899d8d1bc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: None__wall1_jpg
+    second: {fileID: 2100000, guid: afcd501d364caa144a72e7d91b49fa37, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: casa_002__cartoon-roof-texture-wood-roof-texture-3d-roof-16-best-texturas
+    second: {fileID: 2100000, guid: 84ff1ee7c882146449057225d82a1e5e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: casa_002__tablasMadera_jpg
+    second: {fileID: 2100000, guid: 3f6ed6a285757244f84e1d4454e64064, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: casa_002__techoLadrillos_png
+    second: {fileID: 2100000, guid: d755c0b4aa9535d41b80069d5841406d, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

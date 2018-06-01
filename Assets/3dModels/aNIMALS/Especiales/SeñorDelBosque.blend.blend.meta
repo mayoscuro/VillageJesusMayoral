@@ -1,0 +1,191 @@
+fileFormatVersion: 2
+guid: a3927ffe64302504883e827ab528fcea
+timeCreated: 1527517130
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Bone
+    100004: Bone_001
+    100006: Bone_002
+    100008: Bone_003
+    100010: Bone_004
+    100012: Bone_005
+    100014: Bone_006
+    100016: Bone_007
+    100018: Cube
+    100020: Cube_001
+    100022: Cylinder
+    100024: PataDelante1_L
+    100026: PataDelante1_R
+    100028: PataDelante2_L
+    100030: PataDelante2_R
+    100032: PataDelante3_L
+    100034: PataDelante3_R
+    100036: PataDelante4_L
+    100038: PataDelante4_R
+    100040: PataDetras1_L
+    100042: PataDetras1_R
+    100044: PataDetras2_L
+    100046: PataDetras2_R
+    100048: PataDetras3_L
+    100050: PataDetras3_R
+    100052: PataDetras4_L
+    100054: PataDetras4_R
+    100056: PataDetras5_L
+    100058: PataDetras5_R
+    100060: Plane
+    100062: //RootNode
+    400000: Armature
+    400002: Bone
+    400004: Bone_001
+    400006: Bone_002
+    400008: Bone_003
+    400010: Bone_004
+    400012: Bone_005
+    400014: Bone_006
+    400016: Bone_007
+    400018: Cube
+    400020: Cube_001
+    400022: Cylinder
+    400024: PataDelante1_L
+    400026: PataDelante1_R
+    400028: PataDelante2_L
+    400030: PataDelante2_R
+    400032: PataDelante3_L
+    400034: PataDelante3_R
+    400036: PataDelante4_L
+    400038: PataDelante4_R
+    400040: PataDetras1_L
+    400042: PataDetras1_R
+    400044: PataDetras2_L
+    400046: PataDetras2_R
+    400048: PataDetras3_L
+    400050: PataDetras3_R
+    400052: PataDetras4_L
+    400054: PataDetras4_R
+    400056: PataDetras5_L
+    400058: PataDetras5_R
+    400060: Plane
+    400062: //RootNode
+    2300000: Cube
+    2300002: Cube_001
+    2300004: Plane
+    3300000: Cube
+    3300002: Cube_001
+    3300004: Plane
+    4300000: Plane
+    4300002: Cylinder
+    4300004: Cube
+    4300006: Cube_001
+    7400000: Default Take
+    7400002: Caminar
+    7400004: Comer
+    7400006: Mirar
+    7400008: Muerte
+    9500000: //RootNode
+    13700000: Cylinder
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_001__BlackTexture_jpg
+    second: {fileID: 2100000, guid: a2058d8dbd76a384b81379e6f54e3ee7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_001__tree_textureMasck_jpg
+    second: {fileID: 2100000, guid: 61f20b19ef7fd9645a226bd35790a01d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_001__tree_texture_jpg
+    second: {fileID: 2100000, guid: 4ad7ca8d700f017419e6191c9cce7ee7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material__DefaultMaterial_Base_Color_png
+    second: {fileID: 2100000, guid: 24618a02c6adede4bb2d23a3a52ed70d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: unnamed
+    second: {fileID: 2100000, guid: 3ef25fd43b749954f8b1d7c8282c568a, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,177 @@
+fileFormatVersion: 2
+guid: 2a7668bf4304bce488f32d3891c49b72
+timeCreated: 1526124718
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: BarreaAltura
+    100004: BarrearAltura
+    100006: BarreraAltura
+    100008: BarreraAltura_001
+    100010: BarreraAltura_002
+    100012: BarreraAltura_003
+    100014: BarreraAltura_004
+    100016: BarreraAltura_005
+    100018: BarreraAltura_006
+    100020: BarreraAlturaGrande
+    100022: Meseta
+    100024: MesetaBarreraAltura
+    400000: //RootNode
+    400002: BarreaAltura
+    400004: BarrearAltura
+    400006: BarreraAltura
+    400008: BarreraAltura_001
+    400010: BarreraAltura_002
+    400012: BarreraAltura_003
+    400014: BarreraAltura_004
+    400016: BarreraAltura_005
+    400018: BarreraAltura_006
+    400020: BarreraAlturaGrande
+    400022: Meseta
+    400024: MesetaBarreraAltura
+    2300000: //RootNode
+    2300002: BarreaAltura
+    2300004: BarrearAltura
+    2300006: BarreraAltura
+    2300008: BarreraAltura_001
+    2300010: BarreraAltura_002
+    2300012: BarreraAltura_003
+    2300014: BarreraAltura_004
+    2300016: BarreraAltura_005
+    2300018: BarreraAltura_006
+    2300020: BarreraAlturaGrande
+    2300022: Meseta
+    2300024: MesetaBarreraAltura
+    3300000: //RootNode
+    3300002: BarreaAltura
+    3300004: BarrearAltura
+    3300006: BarreraAltura
+    3300008: BarreraAltura_001
+    3300010: BarreraAltura_002
+    3300012: BarreraAltura_003
+    3300014: BarreraAltura_004
+    3300016: BarreraAltura_005
+    3300018: BarreraAltura_006
+    3300020: BarreraAlturaGrande
+    3300022: Meseta
+    3300024: MesetaBarreraAltura
+    4300000: Plane_003
+    4300002: BarreraAltura_006
+    4300004: BarreraAltura
+    4300006: BarreraAltura_005
+    4300008: BarreaAltura
+    4300010: MesetaBarreraAltura
+    4300012: BarreraAltura_004
+    4300014: BarreraAltura_003
+    4300016: BarrearAltura
+    4300018: BarreraAltura_002
+    4300020: BarreraAlturaGrande
+    4300022: BarreraAltura_001
+    4300024: Meseta
+    7400000: Default Take
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: None__CespedSuelo_jpg
+    second: {fileID: 2100000, guid: 52c534d22db257f489a4ea7d3a4cea97, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: None__Paredes_tierra_jpg
+    second: {fileID: 2100000, guid: a6e7598a39b9d92409067f74e0b510bd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: None__a26dfb8802ae54ec0f8910df258c928e--hand-painted-textures-anime-c
+    second: {fileID: 2100000, guid: 25a3c9f3e46f4fb429a8d073929b5263, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: None__a8cd955db778094478556c306081f83a_jpg_001
+    second: {fileID: 2100000, guid: eba9365b478abe94fbb768c2145a35fe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: None__wall1_jpg_001
+    second: {fileID: 2100000, guid: 0627a6a26531bcc4b8ab393afcb5dda6, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

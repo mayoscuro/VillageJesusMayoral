@@ -1,0 +1,169 @@
+fileFormatVersion: 2
+guid: b8dc45e12dda3b8448651b196cfa2e71
+timeCreated: 1524131412
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Adorno
+    100002: AdrornosDeMadera
+    100004: AdrornosDeMadera_001
+    100006: Casa
+    100008: //RootNode
+    100010: Casa_001
+    100012: Casa_002
+    100014: Cube_007
+    100016: Tejado
+    100018: Rampa
+    400000: Adorno
+    400002: AdrornosDeMadera
+    400004: AdrornosDeMadera_001
+    400006: Casa
+    400008: //RootNode
+    400010: Casa_001
+    400012: Casa_002
+    400014: Cube_007
+    400016: Tejado
+    400018: Rampa
+    2300000: Adorno
+    2300002: AdrornosDeMadera
+    2300004: AdrornosDeMadera_001
+    2300006: Casa
+    2300008: Casa_001
+    2300010: Casa_002
+    2300012: Cube_007
+    2300014: Tejado
+    2300016: Rampa
+    3300000: Adorno
+    3300002: AdrornosDeMadera
+    3300004: AdrornosDeMadera_001
+    3300006: Casa
+    3300008: Casa_001
+    3300010: Casa_002
+    3300012: Cube_007
+    3300014: Tejado
+    3300016: Rampa
+    4300000: AdrornosDeMadera_001
+    4300002: Casa_002
+    4300004: Casa_001
+    4300006: Cube_007
+    4300008: Adorno
+    4300010: AdrornosDeMadera
+    4300012: Tejado
+    4300014: Casa
+    4300016: Rampa
+    7400000: Default Take
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cristal
+    second: {fileID: 2100000, guid: 33e1b93a7eb52514bafe64c425e3d1f9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Madera__tree_texture_jpg
+    second: {fileID: 2100000, guid: 4ad7ca8d700f017419e6191c9cce7ee7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: casa
+    second: {fileID: 2100000, guid: afcd501d364caa144a72e7d91b49fa37, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: casa__cartoon-roof-texture-wood-roof-texture-3d-roof-16-best-texturas
+    second: {fileID: 2100000, guid: 84ff1ee7c882146449057225d82a1e5e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: casa__tablasMadera_jpg
+    second: {fileID: 2100000, guid: 3f6ed6a285757244f84e1d4454e64064, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: casa__techoLadrillos_png
+    second: {fileID: 2100000, guid: d755c0b4aa9535d41b80069d5841406d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: casa__wall1_jpg
+    second: {fileID: 2100000, guid: a1053357beaf67246a2d339640b90d2a, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

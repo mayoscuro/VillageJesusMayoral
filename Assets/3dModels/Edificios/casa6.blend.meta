@@ -1,0 +1,164 @@
+fileFormatVersion: 2
+guid: c1d974ddac2394a4e96f42bd7590da49
+timeCreated: 1524304344
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: AdrornosDeMadera_000
+    100002: AdrornosDeMadera_001
+    100004: //RootNode
+    100006: Cube
+    100008: Cube_001
+    100010: Cube_007
+    100012: Cube_212
+    100014: Tejado
+    400000: AdrornosDeMadera_000
+    400002: AdrornosDeMadera_001
+    400004: //RootNode
+    400006: Cube
+    400008: Cube_001
+    400010: Cube_007
+    400012: Cube_212
+    400014: Tejado
+    2300000: AdrornosDeMadera_000
+    2300002: AdrornosDeMadera_001
+    2300004: Cube
+    2300006: Cube_001
+    2300008: Cube_007
+    2300010: Cube_212
+    2300012: Tejado
+    3300000: AdrornosDeMadera_000
+    3300002: AdrornosDeMadera_001
+    3300004: Cube
+    3300006: Cube_001
+    3300008: Cube_007
+    3300010: Cube_212
+    3300012: Tejado
+    4300000: Cube_001
+    4300002: AdrornosDeMadera_000
+    4300004: Cube
+    4300006: Cube_212
+    4300008: Tejado
+    4300010: Cube_007
+    4300012: AdrornosDeMadera_001
+    7400000: Default Take
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cristal
+    second: {fileID: 2100000, guid: 33e1b93a7eb52514bafe64c425e3d1f9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Decoracion_extra__tablasMadera_jpg_001
+    second: {fileID: 2100000, guid: 3f6ed6a285757244f84e1d4454e64064, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Madera__pino_jpg
+    second: {fileID: 2100000, guid: bad57c0ff9dc9a144a27aede047ded3d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Madera__tree_texture_jpg
+    second: {fileID: 2100000, guid: 4ad7ca8d700f017419e6191c9cce7ee7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: casa__cartoon-roof-texture-wood-roof-texture-3d-roof-16-best-texturas
+    second: {fileID: 2100000, guid: 84ff1ee7c882146449057225d82a1e5e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: casa__tablasMadera_jpg
+    second: {fileID: 2100000, guid: 3f6ed6a285757244f84e1d4454e64064, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: casa__techoLadrillos_png
+    second: {fileID: 2100000, guid: d755c0b4aa9535d41b80069d5841406d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: casa__wall1_jpg
+    second: {fileID: 2100000, guid: afcd501d364caa144a72e7d91b49fa37, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

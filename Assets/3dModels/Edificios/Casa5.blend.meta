@@ -1,0 +1,224 @@
+fileFormatVersion: 2
+guid: eff9b8905b68b784f8bbd1538eaefaf8
+timeCreated: 1524220139
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Adorno
+    100002: AdrornosDeMadera_000
+    100004: AdrornosDeMadera_004
+    100006: //RootNode
+    100008: CasasPrueba
+    100010: Cube
+    100012: Cube_001
+    100014: Cube_002
+    100016: Cube_007
+    100018: Cube_009
+    100020: Cube_016
+    100022: Cube_017
+    100024: Plane
+    100026: Plane_002
+    100028: Plane_003
+    100030: Plane_004
+    100032: Plane_005
+    100034: Plane_006
+    100036: Tejado
+    400000: Adorno
+    400002: AdrornosDeMadera_000
+    400004: AdrornosDeMadera_004
+    400006: //RootNode
+    400008: CasasPrueba
+    400010: Cube
+    400012: Cube_001
+    400014: Cube_002
+    400016: Cube_007
+    400018: Cube_009
+    400020: Cube_016
+    400022: Cube_017
+    400024: Plane
+    400026: Plane_002
+    400028: Plane_003
+    400030: Plane_004
+    400032: Plane_005
+    400034: Plane_006
+    400036: Tejado
+    2300000: Adorno
+    2300002: AdrornosDeMadera_000
+    2300004: AdrornosDeMadera_004
+    2300006: CasasPrueba
+    2300008: Cube
+    2300010: Cube_001
+    2300012: Cube_002
+    2300014: Cube_007
+    2300016: Cube_009
+    2300018: Cube_016
+    2300020: Cube_017
+    2300022: Plane
+    2300024: Plane_002
+    2300026: Plane_003
+    2300028: Plane_004
+    2300030: Plane_005
+    2300032: Plane_006
+    2300034: Tejado
+    3300000: Adorno
+    3300002: AdrornosDeMadera_000
+    3300004: AdrornosDeMadera_004
+    3300006: CasasPrueba
+    3300008: Cube
+    3300010: Cube_001
+    3300012: Cube_002
+    3300014: Cube_007
+    3300016: Cube_009
+    3300018: Cube_016
+    3300020: Cube_017
+    3300022: Plane
+    3300024: Plane_002
+    3300026: Plane_003
+    3300028: Plane_004
+    3300030: Plane_005
+    3300032: Plane_006
+    3300034: Tejado
+    4300000: AdrornosDeMadera_000
+    4300002: Cube_002
+    4300004: Cube_001
+    4300006: Adorno
+    4300008: CasasPrueba
+    4300010: Cube
+    4300012: Cube_007
+    4300014: Cube_009
+    4300016: Cube_016
+    4300018: Cube_017
+    4300020: Plane
+    4300022: Plane_002
+    4300024: Plane_003
+    4300026: Plane_004
+    4300028: Plane_005
+    4300030: Plane_006
+    4300032: Tejado
+    4300034: AdrornosDeMadera_004
+    7400000: Default Take
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cristal
+    second: {fileID: 2100000, guid: 33e1b93a7eb52514bafe64c425e3d1f9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CristalLuces
+    second: {fileID: 2100000, guid: ec62f1c159fce3c43851bd4321262b95, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Madera_001__tree_texture_jpg_001
+    second: {fileID: 2100000, guid: 4ad7ca8d700f017419e6191c9cce7ee7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Madera__tree_texture_jpg
+    second: {fileID: 2100000, guid: 4ad7ca8d700f017419e6191c9cce7ee7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: None__Cuerda_png
+    second: {fileID: 2100000, guid: 33ba7ddc16e9d3344a868dc899d8d1bc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: None__wall1_jpg
+    second: {fileID: 2100000, guid: afcd501d364caa144a72e7d91b49fa37, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: casa_002__cartoon-roof-texture-wood-roof-texture-3d-roof-16-best-texturas
+    second: {fileID: 2100000, guid: 84ff1ee7c882146449057225d82a1e5e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: casa_002__tablasMadera_jpg
+    second: {fileID: 2100000, guid: 3f6ed6a285757244f84e1d4454e64064, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: casa_002__techoLadrillos_png
+    second: {fileID: 2100000, guid: d755c0b4aa9535d41b80069d5841406d, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

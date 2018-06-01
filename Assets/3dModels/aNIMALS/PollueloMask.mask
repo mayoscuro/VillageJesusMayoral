@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: PollueloMask
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Armature
+    m_Weight: 0
+  - m_Path: Armature/Bone
+    m_Weight: 0
+  - m_Path: Armature/Bone/Bone_002
+    m_Weight: 0
+  - m_Path: Armature/Bone1_L
+    m_Weight: 0
+  - m_Path: Armature/Bone1_L/Bone2_L
+    m_Weight: 0
+  - m_Path: Armature/Bone1_R
+    m_Weight: 0
+  - m_Path: Armature/Bone1_R/Bone2_R
+    m_Weight: 0
+  - m_Path: Armature/Bone_2
+    m_Weight: 0
+  - m_Path: Armature/Bone_2/Bone_003
+    m_Weight: 0
+  - m_Path: Armature/Bone_8
+    m_Weight: 0
+  - m_Path: Armature/Bone_9
+    m_Weight: 0
+  - m_Path: Armature_001
+    m_Weight: 1
+  - m_Path: Armature_001/Bone_001
+    m_Weight: 1
+  - m_Path: Armature_001/Bone_001/Bone_005
+    m_Weight: 1
+  - m_Path: Armature_001/Bone_001/Bone_005/Bone_006
+    m_Weight: 1
+  - m_Path: Armature_001/Bone_007
+    m_Weight: 1
+  - m_Path: Armature_001/Bone_008
+    m_Weight: 1
+  - m_Path: Armature_001/Bone_008/Bone_009
+    m_Weight: 1
+  - m_Path: Armature_001/Bone_008/Bone_009/Bone_010
+    m_Weight: 1
+  - m_Path: Armature_001/Bone_011
+    m_Weight: 1
+  - m_Path: Sphere
+    m_Weight: 0
+  - m_Path: Sphere_001
+    m_Weight: 0
