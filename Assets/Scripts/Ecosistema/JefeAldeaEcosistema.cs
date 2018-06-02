@@ -62,6 +62,14 @@ public class JefeAldeaEcosistema : MonoBehaviour {
         hierbaTextSemanaPasada.text = "" + ecosistema.obtenerDatosDelGrafo("Plantas").numVivosSemanaPasada;
     }
 
+    public bool estadoDelEcosistema() { //True si buena, false si malo.
+        if (int.Parse(zorroTextDiferencia.text) > ((int.Parse(zorroTextSemanaPasada.text) * 70) / 100) || int.Parse(loboTextDiferencia.text) > ((int.Parse(loboTextSemanaPasada.text) * 70) / 100) ||
+            int.Parse(ciervoTextDiferencia.text) > ((int.Parse(ciervoTextSemanaPasada.text) * 70) / 100)) {
+            return false;
+        }
+        return true;
+    }
+
     // Update is called once per frame
     public void exitPanelButton () {
         triggerDialogos.SetActive(true);

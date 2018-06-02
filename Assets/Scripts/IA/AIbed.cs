@@ -7,6 +7,7 @@ public class AIbed : MonoBehaviour {
     public GameObject gameObjectDespierto;
     private void OnTriggerEnter(Collider other)
     {
+        //Debug.Log(other.name);
         if (other.tag != "Player" && other.gameObject.name != "SpeackTrigger" && !DayNightController.day) {
             gameObjectDormido.transform.GetChild(0).GetComponent<Animator>().SetBool("Dormir",true);
             gameObjectDespierto.SetActive(false);

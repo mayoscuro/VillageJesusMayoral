@@ -170,7 +170,9 @@ public class Aldeana : MonoBehaviour {
             if (!colliderAldeana.aldeanaEnCasa)
             {
                 recorrerNodos(caminoDeVuelta, ref camino6);
-                
+            }
+            else {
+                anim.SetBool("Walk", false);
             }
         }
 

@@ -24,7 +24,11 @@ public class StoryEvents : MonoBehaviour {
 
     [Header("Espada Grande")]
     public GameObject granEspadaObj;
-    private bool intentoAparicion; 
+    private bool intentoAparicion;
+
+    [Header("libros")]
+    public GameObject libroAldeana;
+    public GameObject libroCocinero;
 
 
 	// Use this for initialization
@@ -56,6 +60,13 @@ public class StoryEvents : MonoBehaviour {
         } else if (DayNightController.day) {
             intentoAparicion = false;
             granEspadaObj.SetActive(false);
+        }
+
+        if (flowText.GetIntegerVariable("rank") >= 3) {
+            libroAldeana.SetActive(true);
+        }
+        if (flowText.GetIntegerVariable("rank") >=4) {
+            libroCocinero.SetActive(true);
         }
 	}
 

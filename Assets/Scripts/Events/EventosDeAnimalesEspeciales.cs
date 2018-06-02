@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Fungus;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -41,19 +42,26 @@ public class EventosDeAnimalesEspeciales : MonoBehaviour {
     private bool kodamaActivo = true;
     [HideInInspector]public bool aparicion=false;
     private Animator animatorKodama;
+    private bool ObjetoRecibido;
 
     public bool eventoKodamaTipo1;//Aparece un Kodama en un bosque aleatorio y solo da el objeto al jugador y se va.
     public bool eventoKodamaTipo2;//Aparece un kodama en un bosque y se escapa un poco del jugador, hasta que desaparece dejando un objeto.
     public bool eventoKodamaTipo3;//El baile de los Kodama.
 
     public bool eventoLordOfTheForest;//Aparece en un bosque aleatorio, si el jugador se acerca este se paraliza y el señor del bosque se va. 
-                                       //Si no se acerca, dejará un objeto en el suelo y desaparecerá.
+                                      //Si no se acerca, dejará un objeto en el suelo y desaparecerá.
+
+
+    [Header("Inventario")]
+    public InventorySystem inventory;
+    public JefeAldeaEcosistema ecosistema;
+    public Flowchart flowchart;
 
 
     public void eventRandomChoose() {
         if (Random.value > 0.7 && !kodamaAparecido) {//0.7
             eventoKodamaTipo1 = true;
-            
+            ObjetoRecibido = false;
             kodamaAparecido = true;
             return;
         }
@@ -61,6 +69,7 @@ public class EventosDeAnimalesEspeciales : MonoBehaviour {
         if (Random.value > 0/*.8*/ && !kodamaAparecido) {//0.8
             aparicion = true;
             eventoKodamaTipo2 = true;
+            ObjetoRecibido = false;
             aparicion = true;
             return;
         }
@@ -73,6 +82,7 @@ public class EventosDeAnimalesEspeciales : MonoBehaviour {
         if (Random.value > 0.9 || Random.value >  0.5 && kodamaAparecido) {//Si aparece un kodama hay más posibilidades de que esa sepana aparezca el señor del bosque.
             eventoLordOfTheForest = true;
             aparicion = true;
+            ObjetoRecibido = false;
             lordAparecido = true;
             return;
         }
@@ -92,7 +102,6 @@ public class EventosDeAnimalesEspeciales : MonoBehaviour {
         } else if (eventoKodamaTipo2) {
             eventoKodamaJugar();
         } else if (eventoKodamaTipo3) {
-            eventoKodamaBaile();
         } else if (eventoLordOfTheForest) {
             eventoLordOfTheForestObjeto();
         }
@@ -119,7 +128,21 @@ public class EventosDeAnimalesEspeciales : MonoBehaviour {
         eventoKodamaTipo1 = false;//Esto solo debería desactivarse al final de cada semana,en un update o algo.
         eventoKodamaTipo2 = false;
         player.GetComponent<UnityStandardAssets.Characters.ThirdPerson.ThirdPersonCharacter>().continueMovement();
-
+        if (!ObjetoRecibido) {
+            ObjetoRecibido = true;
+            if (ecosistema.estadoDelEcosistema())
+            {
+                inventory.AñadirItem(26);
+            }
+            else
+            {
+                inventory.AñadirItem(27);
+            }
+            if (Random.value > 0.8)
+            {
+                inventory.AñadirItem(28);
+            }
+        }
 
     }
 
@@ -206,13 +229,6 @@ public class EventosDeAnimalesEspeciales : MonoBehaviour {
             }
     }
 
-    public void eventoKodamaBaile() {
-
-
-
-
-    }
-
     public void eventoLordOfTheForestObjeto() {
         if (aparicion)
         {
@@ -255,6 +271,20 @@ public class EventosDeAnimalesEspeciales : MonoBehaviour {
         lordOfTheForest.SetActive(false);
         particulasLord.SetActive(false);
         eventoLordOfTheForest = false;
+        if (!ObjetoRecibido)
+        {
+            ObjetoRecibido = true;
+            if (ecosistema.estadoDelEcosistema())
+            {
+                inventory.AñadirItem(23);
+                flowchart.SetBooleanVariable("ItemLord", true);
+            }
+            else
+            {
+                inventory.AñadirItem(24);
+                flowchart.SetBooleanVariable("ItemLord", false);
+            }
+        }
         player.GetComponent<UnityStandardAssets.Characters.ThirdPerson.ThirdPersonCharacter>().continueMovement();
     }
 }

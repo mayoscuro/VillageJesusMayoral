@@ -26,18 +26,19 @@ public class Cocinero : MonoBehaviour {
         {
             vueltaACasa.Add(caminoACocina[y]);
         }
+        
     }
 
     public void pararRutaParaHablar()
     {//Se llama desde el flowChart (Dialogos).
         nav.isStopped = true;
-        //anim.SetBool("isIdle", true);
+        anim.SetBool("Talking", true);
     }
 
     public void reanudarRutaDespuesDeHablar()
     {
         nav.isStopped = false;
-        //anim.SetBool("isIdle", false);
+        anim.SetBool("Talking", false);
     }
 
     // Update is called once per frame
@@ -46,6 +47,7 @@ public class Cocinero : MonoBehaviour {
         {
             if (alHuerto)
             {
+                anim.SetBool("Walking",true);
                 recorrerNodos(caminoAlHuerto, ref camino3);
             }
             else
@@ -64,36 +66,46 @@ public class Cocinero : MonoBehaviour {
 	}
 
     private void recorrerNodos(List<Transform> listaNodos,ref int x) {
-        if (x < listaNodos.Count)
-        {
+        if (!nav.pathPending) {
+            if (x < listaNodos.Count)
+            {
+                anim.SetBool("Walking", true);
+                // Debug.Log("rotando y tal");
+                var targetRotation = Quaternion.LookRotation(listaNodos[x].transform.position - transform.position);
+                // Smoothly rotate towards the target point.
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, speedRotation * Time.deltaTime);
+            }
+            else if (DayNightController.day && nav.remainingDistance < 0.4f && !cocinas)
+            {
+                cocinas = true;
+                CancelInvoke();
+                anim.SetBool("Walking", true);
+                InvokeRepeating("esperarHacerTarea", 0, 50);
+            }
+            else if (DayNightController.day && nav.remainingDistance < 0.4f && alHuerto)
+            {
+                alHuerto = false;
+                anim.SetBool("Walking", true);
+            }
 
-            // Debug.Log("rotando y tal");
-            var targetRotation = Quaternion.LookRotation(listaNodos[x].transform.position - transform.position);
-            // Smoothly rotate towards the target point.
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, speedRotation * Time.deltaTime);
-        }
-        else if (DayNightController.day && nav.remainingDistance < 0.4f && !cocinas)
-        {
-            cocinas = true;
-            InvokeRepeating("esperarHacerTarea", 0, 50);
-        }
-        else if(DayNightController.day && nav.remainingDistance < 0.4f && alHuerto)
-        {
-            alHuerto = false;
-        }
+           /* if (cocinas && nav.remainingDistance < 0.4f) {
+                anim.SetBool("Walking", false);
+            }*/
 
-        if (nav.remainingDistance < 0.5f && x < listaNodos.Count)
-        {
-            //Debug.Log("Recorriendo");
-            nav.SetDestination(listaNodos[x].position);
-            //Debug.Log("Nodo: " + listaNodos[x].name);
-            anim.SetBool("isIdle", false);
-            x++;
+            if (nav.remainingDistance < 0.5f && x < listaNodos.Count && !cocinas)
+            {
+                //Debug.Log("Recorriendo");
+                nav.SetDestination(listaNodos[x].position);
+                //Debug.Log("Nodo: " + listaNodos[x].name);
+                /*if(cocinas == true)
+                    anim.SetBool("Walking", false);*/
+                x++;
+            }
         }
     }
 
     void esperarHacerTarea() {
-        anim.SetBool("isIdle", false);
+        
         if (camino2 >= caminoEnLaCocina.Count)
         {
             camino2 = 0;
@@ -107,7 +119,17 @@ public class Cocinero : MonoBehaviour {
         else
         {
             nav.SetDestination(caminoEnLaCocina[camino2].position);
+            anim.SetBool("Walking", true);
             camino2++;
+            InvokeRepeating("recorrerNodoEnCocina", 0, 0.5f);
+        }
+    }
+
+    void recorrerNodoEnCocina() {
+        if (nav.remainingDistance < 0.4f)
+        {
+            CancelInvoke("recorrerNodoEnCocina");
+            anim.SetBool("Walking", false);
         }
     }
 }
