@@ -36,11 +36,15 @@ public class PlayerStats: MonoBehaviour {
     }
     private void Update()
     {
-        if (playerController.esquivar && !esquivando) {
-            esquivando = true;
-            restandoResist = true;
-            restarResistencia(25);
+        if (!playerController.corriendo && resistencia > 0) {
+            
+            restarResistencia(1);
         }
+
+        if (playerController.corriendo) {
+            rellenarResistencia();
+        }
+
         if (ecosistem.obtenerDatosDelGrafo("Lobo") == null) {
             gameOver("Lobo");
         }
@@ -54,21 +58,29 @@ public class PlayerStats: MonoBehaviour {
         }
     }
     public void restarResistencia(int valor) {
-        resistencia = resistencia - valor;
-        sliderResistencia.value = resistencia;
-        
-        StartCoroutine("recuperarResistenciaContiempo");
+        StartCoroutine("restarResistenciaContiempo");
     }
 
+    IEnumerator restarResistenciaContiempo()
+    {
+         yield return null;
+         InvokeRepeating("restarResistencia", 0, 0.1f);
+        
+    }
     IEnumerator recuperarResistenciaContiempo() {
-        restandoResist = false;
-        yield return new WaitForSeconds(3);
-        if (restandoResist)
+        yield return null;
+        InvokeRepeating("rellenarResistencia",0,0.1f);
+        
+    }
+
+    void restarResistencia()
+    {
+        sliderResistencia.value -= 0.01f;
+        if (sliderResistencia.value == 0)
         {
-            yield return null;
-        }
-        else {
-            InvokeRepeating("rellenarResistencia",0,0.01f);
+            CancelInvoke();
+            playerController.corriendo = true;
+
         }
     }
 
@@ -76,7 +88,7 @@ public class PlayerStats: MonoBehaviour {
         sliderResistencia.value += 0.1f;
         if (sliderResistencia.value == sliderResistencia.maxValue) {
             CancelInvoke();
-            esquivando = false;
+
         }
     }
 

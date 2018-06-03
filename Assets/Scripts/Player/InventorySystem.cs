@@ -14,6 +14,7 @@ public class InventorySystem : MonoBehaviour
     public List<Text> numeroObjetos;
     public List<Item> inventory = new List<Item>();
     public List<Item> slots = new List<Item>();
+    public DayNightController timeWorld;
     public Image flechaImg;
     public Text numeroFlechasText;
     public Image HierbaCurativaImg;
@@ -70,11 +71,13 @@ public class InventorySystem : MonoBehaviour
             if (showInventory)
             {
                 playerController.stopPlayer();
+                timeWorld.timerStop = true;
                 playerController.enMenu = true;
                 camara.m_LockCursor = false;
                 camara.enabled = false;
             }
             else {
+                timeWorld.timerStop = false;
                 playerController.continueMovement();
                 playerController.enMenu = false;
                 //playerController.continueMovement();

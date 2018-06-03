@@ -61,12 +61,21 @@ public class StoryEvents : MonoBehaviour {
             intentoAparicion = false;
             granEspadaObj.SetActive(false);
         }
-
-        if (flowText.GetIntegerVariable("rank") >= 3) {
+       // Debug.Log(flowText.GetIntegerVariable("rango"));
+        if (flowText.GetIntegerVariable("rango") >= 3)
+        {
+            Debug.Log("DENTRO");
             libroAldeana.SetActive(true);
         }
-        if (flowText.GetIntegerVariable("rank") >=4) {
+        else {
+            libroAldeana.SetActive(false);
+        }
+        if (flowText.GetIntegerVariable("rango") >= 4)
+        {
             libroCocinero.SetActive(true);
+        }
+        else {
+            libroCocinero.SetActive(false);
         }
 	}
 

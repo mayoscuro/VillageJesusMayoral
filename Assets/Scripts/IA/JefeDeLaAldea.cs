@@ -59,11 +59,11 @@ public class JefeDeLaAldea : MonoBehaviour {
             else if (!DayNightController.day && dayNight.currentTimeOfDay >= 0.96f || dayNight.currentTimeOfDay <= 0.1f && !DayNightController.day && camino1 != 0) {
                 recorrerNodos(vueltaADormir, ref camino3);
             }
-            /*
+            
             if (camino1 >= nodosAPuerta.Count && camino2 >= SalirDeLaAldea.Count && camino3 >= vueltaADormir.Count) {
                 camino1 = 0;
                 camino2 = 0;
-            }*/
+            }
         }
 
     }
@@ -86,7 +86,7 @@ public class JefeDeLaAldea : MonoBehaviour {
             nav.ResetPath();
             nav.SetDestination(listaNodos[x].position);
             x++;
-        }else if (nav.remainingDistance < 0.5f)
+        }else if (!nav.pathPending && nav.remainingDistance < 0.5f)
         {
             anim.SetBool("Walking", false);
             anim.SetBool("Talking", false);

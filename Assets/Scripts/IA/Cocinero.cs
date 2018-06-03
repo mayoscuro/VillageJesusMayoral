@@ -63,6 +63,8 @@ public class Cocinero : MonoBehaviour {
         else {
             camino1 = 0;
             camino2 = 0;
+            cocinas = false;
+            alHuerto = false;
             CancelInvoke();
             camino3 = 0;
             recorrerNodos(vueltaACasa, ref camino4);
@@ -79,14 +81,14 @@ public class Cocinero : MonoBehaviour {
                 // Smoothly rotate towards the target point.
                 transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, speedRotation * Time.deltaTime);
             }
-            else if (DayNightController.day && nav.remainingDistance < 0.4f && !cocinas)
+            else if (DayNightController.day && !nav.pathPending &&  nav.remainingDistance < 0.4f && !cocinas)
             {
                 cocinas = true;
                 CancelInvoke();
                 anim.SetBool("Walking", true);
                 InvokeRepeating("esperarHacerTarea", 0, 50);
             }
-            else if (DayNightController.day && nav.remainingDistance < 0.4f && alHuerto)
+            else if (DayNightController.day && !nav.pathPending && nav.remainingDistance < 0.4f && alHuerto)
             {
                 alHuerto = false;
                 anim.SetBool("Walking", true);
@@ -96,7 +98,7 @@ public class Cocinero : MonoBehaviour {
                 anim.SetBool("Walking", false);
             }*/
 
-            if ( nav.remainingDistance < 0.5f && x < listaNodos.Count && !cocinas)
+            if (!nav.pathPending && nav.remainingDistance < 0.5f && x < listaNodos.Count && !cocinas)
             {
                 //Debug.Log("Recorriendo");
                 nav.SetDestination(listaNodos[x].position);

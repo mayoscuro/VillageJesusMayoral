@@ -47,20 +47,20 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
         public bool recolectando = false;
 
-        public bool esquivar  = false;
+        //public bool esquivar  = false;
+        public bool corriendo = true;
 
         public FreeLookCam camaraScript;
 
         
 
-        public bool runing;
+        //public bool runing;
         //Auxiliares para guardar la velocidad linear y angular para volver a darselos al personaje despues de que frene al recoger objetos o interactuar con NPCs:
         private Vector3 velocity;
         private Vector3 angularVelocity;
 
         void Start()
         {
-
 
             m_Animator = GetComponent<Animator>();
             m_Rigidbody = GetComponent<Rigidbody>();
@@ -70,6 +70,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
             m_Rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ /*| RigidbodyConstraints.FreezePositionY*/;
             m_OrigGroundCheckDistance = m_GroundCheckDistance;
+
+
+
+            corriendo = true;
         }
 
         public void stopPlayer() {
@@ -92,21 +96,16 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         {
             if (!recolectando)
             {
-                /*if (Input.GetKeyDown(KeyCode.Q)) {
-                    m_Animator.SetTrigger("Esquivar");
-                    esquivar = true;
+                if (Input.GetKeyDown(KeyCode.Tab)) {
+                    corriendo = !corriendo;
                 }
 
-                if (esquivar && Input.GetKey(KeyCode.W)) {//Hacer resto.
-                    
-                    transform.Translate(transform.forward * 0.15f); // evasion = full speed forward
-                    //moveSpeed = evadeDistance / evadeTime;
-                }*/
+               
 
-                if (m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Esquivar") && m_Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f)
+               /* if (m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Esquivar") && m_Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f)
                 {
                     esquivar = false;
-                }
+                }*/
 
 
                 if (Input.GetKeyDown(KeyCode.E) && !arcoActivo)
@@ -289,8 +288,14 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
 		void UpdateAnimator(Vector3 move)
 		{
-			// update the animator parameters
-			m_Animator.SetFloat("Forward", m_ForwardAmount, 0.1f, Time.deltaTime);
+            // update the animator parameters
+            if (corriendo)
+            {
+                m_Animator.SetFloat("Forward", m_ForwardAmount, 0.1f, Time.deltaTime);
+            }
+            else {
+                m_Animator.SetFloat("Forward", m_ForwardAmount - 0.5f, 0.1f, Time.deltaTime);
+            }
 			m_Animator.SetFloat("Turn", m_TurnAmount, 0.1f, Time.deltaTime);
 			//m_Animator.SetBool("Crouch", m_Crouching);
 			m_Animator.SetBool("OnGround", m_IsGrounded);
@@ -316,7 +321,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			if (m_IsGrounded && move.magnitude > 0)
 			{
 				m_Animator.speed = m_AnimSpeedMultiplier;
-                runing = true;
 			}
 			else
 			{

@@ -393,7 +393,7 @@ public class AnimalsBasicIA : MonoBehaviour
             else
             {
                 Vector3 auxiliar = nav.destination;
-                if (esferaGrande.GetComponent<CollidersAnimales>().collidingPlayerOrWolves && player.GetComponent<UnityStandardAssets.Characters.ThirdPerson.ThirdPersonCharacter>().runing && !escapando)
+                if (esferaGrande.GetComponent<CollidersAnimales>().collidingPlayerOrWolves && player.GetComponent<UnityStandardAssets.Characters.ThirdPerson.ThirdPersonCharacter>().corriendo && !escapando)
                 {
                     anim.SetBool("Correr", false);
                     anim.SetBool("Andar", false);

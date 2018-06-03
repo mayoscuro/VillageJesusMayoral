@@ -1207,7 +1207,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1190527971837652}
   m_LocalRotation: {x: -0, y: -0.7123304, z: -0, w: 0.70184433}
-  m_LocalPosition: {x: 845.2095, y: -17.472757, z: 397.27032}
+  m_LocalPosition: {x: 480.61008, y: -18.155022, z: -176.76428}
   m_LocalScale: {x: 1.4649154, y: 1.4649158, z: 1.4649158}
   m_Children:
   - {fileID: 4885175277427206}
@@ -1838,6 +1838,7 @@ MonoBehaviour:
   esferaGrande: {fileID: 1611764277744176}
   calculando: 0
   alfa: 0
+  paradoAlfa: 0
   alfagameObject: {fileID: 0}
   atacando: 0
 --- !u!114 &114494193150535004
@@ -1874,8 +1875,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 1.0163447
+  m_Center: {x: 0.011005408, y: 0, z: 6.0078895e-12}
 --- !u!135 &135355543959162386
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -1886,8 +1887,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 1.1457645
+  m_Center: {x: 0.020379081, y: 0, z: -1.1428181e-11}
 --- !u!137 &137556248423786474
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

@@ -25,6 +25,7 @@ public class Aldeana : MonoBehaviour {
     private bool hablarCocinero = false;
     private bool hablarConJefe = false;
     private bool llegado;
+    private bool aCasa;
 
     public AldeanaCollider colliderAldeana;
 
@@ -150,7 +151,7 @@ public class Aldeana : MonoBehaviour {
     }
 
     private void llegadoANodoDeParada() {
-        if (nav.remainingDistance < 0.5f) {
+        if (!nav.pathPending && nav.remainingDistance < 0.5f) {
             CancelInvoke("llegadoANodoDeParada");
             anim.SetBool("Walk", false);
             
@@ -162,6 +163,7 @@ public class Aldeana : MonoBehaviour {
         if (DayNightController.day && !hablando)
         {
             camino6 = 0;//Se reinicia el camino de por la noche.
+            aCasa = false;
             if (cuidarDelHuerto && !llegado)
             {
                 InvokeRepeating("recorrerNodosConPausa",0,30);
@@ -196,9 +198,24 @@ public class Aldeana : MonoBehaviour {
             camino4 = 0;
             camino5 = 0;
             tarea = tareas.nada;
-            if (!colliderAldeana.aldeanaEnCasa)
+            if (!colliderAldeana.aldeanaEnCasa && camino6 < caminoDeVuelta.Count)
             {
-                recorrerNodos(caminoDeVuelta, ref camino6);
+                if (!aCasa) {
+                    aCasa = true;
+                    nav.SetDestination(caminoDeVuelta[camino6].position);
+                }
+                //recorrerNodos(caminoDeVuelta, ref camino6);*/
+                if (!nav.pathPending && nav.remainingDistance < 0.5f && camino6 < caminoDeVuelta.Count)
+                {
+                    //Debug.Log("Recorriendo");
+                    nav.SetDestination(caminoDeVuelta[camino6].position);
+                    //  Debug.Log("Nodo: " + listaNodos[x].name);
+
+                    anim.SetBool("Talk", false);
+                    anim.SetBool("Walk", true);
+
+                    camino6++;
+                }
             }
             else {
                 anim.SetBool("Walk", false);
@@ -233,6 +250,8 @@ public class Aldeana : MonoBehaviour {
         else if (!nav.pathPending && nav.remainingDistance < 0.4f && tarea == tareas.huerto && DayNightController.day && !cuidarDelHuerto)
         {
             cuidarDelHuerto = true;
+            anim.SetBool("Walk", true);
+            anim.SetBool("Talk", false);
             Debug.Log("Huerto");
         }
         else if(!nav.pathPending && nav.remainingDistance < 0.4f && tarea == tareas.hablarCocinero && DayNightController.day && !hablarCocinero) {
@@ -253,7 +272,7 @@ public class Aldeana : MonoBehaviour {
 
         }
         //Debug.Log(x);
-        //Debug.Log(x);
+        Debug.Log(x);
 
         if (!nav.pathPending && nav.remainingDistance < 0.5f && x < listaNodos.Count)
         {

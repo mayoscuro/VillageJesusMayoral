@@ -1945,6 +1945,10 @@ MonoBehaviour:
   "esferaPeque\xF1a": {fileID: 1740910024248208}
   esferaGrande: {fileID: 1814114461037232}
   calculando: 0
+  alfa: 0
+  paradoAlfa: 0
+  alfagameObject: {fileID: 0}
+  atacando: 0
 --- !u!114 &114908127697139854
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1979,8 +1983,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.73945546
+  m_Center: {x: -3.4313836e-11, y: 0, z: -0.06072333}
 --- !u!135 &135881666049593980
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -1991,8 +1995,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.9223232
+  m_Center: {x: -0.058112238, y: 0, z: -0.12862602}
 --- !u!137 &137503745243658018
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
