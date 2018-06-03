@@ -34,7 +34,7 @@ public class Spawn2 : MonoBehaviour
                     nuevo.GetComponent<Animal>().nodoAnimal = nodo;
                     
                     nuevo.transform.position = listOfListsGameObject.gameObjects[y].listSpawns[posDelLugar].transform.position;
-                    nuevo.GetComponent<NavMeshAgent>().Warp(listOfListsGameObject.gameObjects[y].listSpawns[posDelLugar].transform.position);
+                    nuevo.GetComponent<NavMeshAgent>().Warp( new Vector3(listOfListsGameObject.gameObjects[y].listSpawns[posDelLugar].transform.position.x + Random.Range(6,12), listOfListsGameObject.gameObjects[y].listSpawns[posDelLugar].transform.position.y, listOfListsGameObject.gameObjects[y].listSpawns[posDelLugar].transform.position.z + Random.Range(6, 12)));
                     listOfListsGameObject.gameObjects[y].inScene.Add(nuevo);
 
                     if (listOfListsGameObject.gameObjects[y].prefab.name == "Lobo" && aux == 0)

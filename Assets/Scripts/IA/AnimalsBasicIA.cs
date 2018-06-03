@@ -22,8 +22,13 @@ public class AnimalsBasicIA : MonoBehaviour
     private bool escapando;
     [Header("Para saber si es loboo alfa")]
     public bool alfa;
+    public bool paradoAlfa;
     [Tooltip("Para saber cual es el alfa al que deben seguir el resto")]public GameObject alfagameObject;
     [Tooltip("Para saber si un lobo esta reproduciendo la animación de atacar")] public bool atacando;
+
+    bool dentroDeEsfera;
+    private Vector3 nuevaPosLobosNoAlfa;
+    private bool huirLobo;
 
     private void Start()
     {
@@ -42,7 +47,7 @@ public class AnimalsBasicIA : MonoBehaviour
             alfagameObject = null;
         }
         else if (animal.tipo == "Lobo" && !alfa) {
-            nav.destination = alfagameObject.transform.position;
+            nav.destination =  new Vector3(alfagameObject.transform.position.x + 10, alfagameObject.transform.position.y, alfagameObject.transform.position.x + 5);
         }
         if (animal.tipo == "Zorro")
         {
@@ -99,22 +104,44 @@ public class AnimalsBasicIA : MonoBehaviour
                 //nav.speed = 4;
             }
             if (!alfa) {
-                nav.speed = alfagameObject.GetComponent<NavMeshAgent>().speed - Random.Range(0.5f,0.9f);
+                nuevaPosLobosNoAlfa = new Vector3(alfagameObject.transform.position.x - 2, alfagameObject.transform.position.y, alfagameObject.transform.position.z + Random.Range(3, 40));
+                nav.speed = alfagameObject.GetComponent<NavMeshAgent>().speed - Random.Range(-5f, -1f);
+                nav.destination = nuevaPosLobosNoAlfa;
             }
         }
         if (animal.tipo == "Zorro" || animal.tipo == "Ciervo" || animal.tipo == "Lobo" && alfa)
         {
-            InvokeRepeating("llegandoANodo", 0, 2);
+            InvokeRepeating("llegandoANodo", 0, 1);
         }
         else if (animal.tipo == "Lobo" && !alfa) {
-            InvokeRepeating("followAlfa", 0, 2);
+            InvokeRepeating("followAlfa", 0, 0.5f);
         }
     }
 
     void followAlfa() {
-        if (!nav.pathPending && nav.remainingDistance <= 10f && !calculando) {
-            nav.destination = alfagameObject.transform.position;
-            nav.speed = alfagameObject.GetComponent<NavMeshAgent>().speed - Random.Range(0.5f, 0.9f);
+        
+        if (!nav.pathPending && nav.remainingDistance <= 3f && !calculando) {
+            nav.destination = new Vector3(alfagameObject.transform.position.x - 2, alfagameObject.transform.position.y, alfagameObject.transform.position.z + Random.Range(3,40));
+            nav.speed = alfagameObject.GetComponent<NavMeshAgent>().speed - Random.Range(-5f, -1f);
+            
+
+
+        }
+
+        if (alfagameObject.GetComponent<AnimalsBasicIA>().paradoAlfa)
+        {
+
+            nav.isStopped = true;
+            anim.SetBool("Andar", false);
+            anim.SetBool("Mirar", false);
+            anim.SetBool("Parar", true);
+        }
+        else
+        {
+            nav.isStopped = false;
+            anim.SetBool("Andar", true);
+            anim.SetBool("Mirar", false);
+            anim.SetBool("Parar", false);
         }
 
         if (!calculando)
@@ -124,6 +151,8 @@ public class AnimalsBasicIA : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, speedRotation * Time.deltaTime);
         }
     }
+
+   
 
     private void llegandoANodo()
     {
@@ -176,6 +205,7 @@ public class AnimalsBasicIA : MonoBehaviour
                 nav.speed = Random.Range(3, 15);
                 anim.SetBool("Andar", true);
                 anim.SetBool("Mirar", false);
+                anim.SetBool("Parar", false);
             }
             //x++;
             //Debug.Log(x);
@@ -297,23 +327,26 @@ public class AnimalsBasicIA : MonoBehaviour
             //Debug.Log("Segundo");
             anim.SetBool("Andar", false);
             anim.SetBool("Mirar", false);
-            //anim.SetBool("Comer", true);
+            anim.SetBool("Parar", true);
+
+            paradoAlfa = true;
 
 
             yield return new WaitForSeconds(10f);
+            Debug.Log("Despues de esperar");
             nav.isStopped = false;
             //Debug.Log("Tercero");
             animal.speed = Random.Range(3, 15);
             nav.speed = animal.speed;
 
-
-            if (!nav.isStopped)
-            {
+            paradoAlfa = false;
+            /*if (!nav.isStopped)
+            {*/
                 //anim.SetBool("Correr", false);
                 anim.SetBool("Mirar", false);
                 anim.SetBool("Andar", true);
-
-            }
+                anim.SetBool("Parar", false);
+           // }
 
 
 
@@ -321,7 +354,7 @@ public class AnimalsBasicIA : MonoBehaviour
 
             //if (!nav.pathPending)
             //{
-            nuevaDir = RandomNavmeshLocation(Random.Range(100f, 180f));
+            nuevaDir = RandomNavmeshLocation(Random.Range(200f, 300f));
             nav.SetDestination(nuevaDir);
 
             InvokeRepeating("bucle", 0, 5);
@@ -330,8 +363,10 @@ public class AnimalsBasicIA : MonoBehaviour
 
     private void Update()
     {
-        if (animal.tipo == "Lobo" && !alfa && alfagameObject !=null && alfagameObject.GetComponent<Animal>().muerto || animal.tipo == "Lobo" && !alfa && alfagameObject == null)
+        
+        if (animal.tipo == "Lobo" && !alfa && alfagameObject !=null && alfagameObject.GetComponent<Animal>().muerto || animal.tipo == "Lobo" && !alfa && alfagameObject == null && !gameObject.GetComponent<Animal>().muerto)
         {
+            pararPersecucionLobo();
             nav.speed = 30;
             nav.destination = animal.nodosDisponibles[1].position;
             if (!nav.pathPending && nav.remainingDistance <= 1f)
@@ -353,7 +388,7 @@ public class AnimalsBasicIA : MonoBehaviour
                 anim.SetBool("Andar", false);
                 anim.SetBool("Correr", false);
                 anim.SetBool("Comer", false);
-
+                anim.SetBool("Parar",false);
             }
             else
             {
@@ -364,7 +399,7 @@ public class AnimalsBasicIA : MonoBehaviour
                     anim.SetBool("Andar", false);
                     anim.SetBool("Mirar", true);
                     nav.isStopped = true;
-
+                    dentroDeEsfera = true;
                     if (esferaPequeña.GetComponent<CollidersAnimales>().collidingPlayerOrWolves)
                     {
                         anim.SetBool("Mirar", false);
@@ -404,7 +439,7 @@ public class AnimalsBasicIA : MonoBehaviour
                         InvokeRepeating("prueba", 0, 2);
                     }
                 }
-                else if (!escapando)
+                else if (!escapando && dentroDeEsfera)
                 {
                     nav.isStopped = false;
                     nav.destination = auxiliar;
@@ -451,7 +486,7 @@ public class AnimalsBasicIA : MonoBehaviour
     }
 
     void bucle() {
-        if (!nav.pathPending && nav.remainingDistance <= 1f)
+        if (!nav.pathPending && nav.remainingDistance <= 4f)
         {
             CancelInvoke();
             pausa = false;
@@ -505,6 +540,11 @@ public class AnimalsBasicIA : MonoBehaviour
 
             pausa = true;
 
+            anim.SetBool("Andar", false);
+            anim.SetBool("Mirar", false);
+            anim.SetBool("Parar", true);
+            nav.isStopped = true;
+            paradoAlfa = true;
 
             /*if (paradaDeNavMesh)
             {
@@ -527,6 +567,7 @@ public class AnimalsBasicIA : MonoBehaviour
         if (!nav.pathPending && nav.remainingDistance <= 4f && calculando && !pausa || nav.remainingDistance >= 4f && calculando && !pausa)
         {
             CancelInvoke();
+            StopAllCoroutines();
             //InvokeRepeating("continuar",0,20);
             //Debug.Log("Primero");
             StartCoroutine("continuar");

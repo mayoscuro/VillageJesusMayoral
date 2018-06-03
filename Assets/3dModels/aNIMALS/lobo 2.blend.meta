@@ -1,0 +1,176 @@
+fileFormatVersion: 2
+guid: e3debc7d45b8c224b9fc69d382ff4131
+timeCreated: 1527964116
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Bone_004
+    100004: Bone_005
+    100006: Bone_006
+    100008: Bone_007
+    100010: Bone_008
+    100012: Bone_009
+    100014: Bone_010
+    100016: Bone_011
+    100018: Bone_012
+    100020: Bone_013
+    100022: Bone_014
+    100024: Cube
+    100026: //RootNode
+    100028: PieDelante01_L
+    100030: PieDelante01_R
+    100032: PieDelante02_L
+    100034: PieDelante02_R
+    100036: PieDelante03_L
+    100038: PieDelante03_R
+    100040: PieDetras01_L
+    100042: PieDetras01_R
+    100044: PieDetras02_L
+    100046: PieDetras02_R
+    100048: PieDetras03_L
+    100050: PieDetras03_R
+    100052: PiernaDelante01_L
+    100054: PiernaDelante01_R
+    100056: PiernaDelante02_L
+    100058: PiernaDelante02_R
+    100060: PiernaDelante03_L
+    100062: PiernaDelante03_R
+    100064: PiernaDetras01_L
+    100066: PiernaDetras01_R
+    100068: PiernaDetras02_L
+    100070: PiernaDetras02_R
+    100072: PiernaDetras03_L
+    100074: PiernaDetras03_R
+    400000: Armature
+    400002: Bone_004
+    400004: Bone_005
+    400006: Bone_006
+    400008: Bone_007
+    400010: Bone_008
+    400012: Bone_009
+    400014: Bone_010
+    400016: Bone_011
+    400018: Bone_012
+    400020: Bone_013
+    400022: Bone_014
+    400024: Cube
+    400026: //RootNode
+    400028: PieDelante01_L
+    400030: PieDelante01_R
+    400032: PieDelante02_L
+    400034: PieDelante02_R
+    400036: PieDelante03_L
+    400038: PieDelante03_R
+    400040: PieDetras01_L
+    400042: PieDetras01_R
+    400044: PieDetras02_L
+    400046: PieDetras02_R
+    400048: PieDetras03_L
+    400050: PieDetras03_R
+    400052: PiernaDelante01_L
+    400054: PiernaDelante01_R
+    400056: PiernaDelante02_L
+    400058: PiernaDelante02_R
+    400060: PiernaDelante03_L
+    400062: PiernaDelante03_R
+    400064: PiernaDetras01_L
+    400066: PiernaDetras01_R
+    400068: PiernaDetras02_L
+    400070: PiernaDetras02_R
+    400072: PiernaDetras03_L
+    400074: PiernaDetras03_R
+    4300000: Cube
+    7400000: Default Take
+    7400002: Atacar
+    7400004: Comer
+    7400006: Die
+    7400008: Mirar_001
+    7400010: Run
+    7400012: Mirar
+    9500000: //RootNode
+    13700000: Cube
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material__Material_Base_Color_png
+    second: {fileID: 2100000, guid: c9e740e0e86a7c047801eec79ada37a7, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

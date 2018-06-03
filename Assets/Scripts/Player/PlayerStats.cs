@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerStats: MonoBehaviour {
@@ -9,6 +10,9 @@ public class PlayerStats: MonoBehaviour {
     public int resistencia; //Puntos de resistencia del jugador.
     public Slider sliderVida;
     public Slider sliderResistencia;
+    public Ecosystem ecosistem;
+    public GameObject panelGameOver;
+    public Text textoCausa;
     private bool atacado = false;
     private bool restandoResist;
     private UnityStandardAssets.Characters.ThirdPerson.ThirdPersonCharacter playerController;
@@ -27,7 +31,7 @@ public class PlayerStats: MonoBehaviour {
         vida = vida - daño;
         sliderVida.value = vida;
         if (vida <= 0) {
-            gameOver();
+            gameOver("Muerte");
         }
     }
     private void Update()
@@ -36,6 +40,17 @@ public class PlayerStats: MonoBehaviour {
             esquivando = true;
             restandoResist = true;
             restarResistencia(25);
+        }
+        if (ecosistem.obtenerDatosDelGrafo("Lobo") == null) {
+            gameOver("Lobo");
+        }
+        if (ecosistem.obtenerDatosDelGrafo("Ciervo") == null)
+        {
+            gameOver("Ciervo");
+        }
+        if (ecosistem.obtenerDatosDelGrafo("Zorro") == null)
+        {
+            gameOver("Zorro");
         }
     }
     public void restarResistencia(int valor) {
@@ -65,16 +80,28 @@ public class PlayerStats: MonoBehaviour {
         }
     }
 
-    void gameOver() {
-        //Animación del personaje cayendo al suelo derrotado.
-        //Aparece la pantalla de game over con las estadisticas del juego y las letras ¿Volver a intentar?
-        //si dice que si, empieza el nivel de 0, si dice que no, sale al menu inicial.
-        
+    void gameOver(string causa) {
+        panelGameOver.SetActive(true);
+        playerController.enabled = false;
+        gameObject.GetComponent<Animator>().enabled = false;
+        if (causa == "Zorro") {
+            textoCausa.text = "Todos los ejemplares de Zorros han muerto";
+        } else if (causa == "Lobo") {
+            textoCausa.text = "Todos los ejemplares de Lobos han muerto";
+        } else if (causa == "Ciervo") {
+            textoCausa.text = "Todos los ejemplares de Ciervos han muerto";
+        } else if (causa == "Muerte") {
+            textoCausa.text = "Has muerto";
+        }
+    }
+
+    public void exitToMainMenuButton() {
+        SceneManager.LoadScene("EscenaMenuPrincipal", LoadSceneMode.Single);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "LoboObjetoPadre" && other.gameObject.GetComponent<AnimalsBasicIA>().atacando) {
+        if (other.gameObject.tag == "Lobo" && other.gameObject.GetComponentInParent<AnimalsBasicIA>().atacando) {
             if (!atacado) {
                 atacado = true;
                 restarVida(other.gameObject.GetComponentInParent<Animal>().attack);

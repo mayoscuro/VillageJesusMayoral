@@ -63,18 +63,25 @@ public class JefeAldeaMisiones : MonoBehaviour {
     }
 
     public void calcularMisiones() {
+        if (ecosistema.obtenerDatosDelGrafo("Zorro")!=null) 
+            datosZorro = ecosistema.obtenerDatosDelGrafo("Zorro").numeroVivosInicioSemana - ecosistema.obtenerDatosDelGrafo("Zorro").numVivosSemanaPasada;
+        
+        if(ecosistema.obtenerDatosDelGrafo("Lobo") != null)
+            datosLobo = ecosistema.obtenerDatosDelGrafo("Lobo").numeroVivosInicioSemana - ecosistema.obtenerDatosDelGrafo("Lobo").numVivosSemanaPasada;
+        if(ecosistema.obtenerDatosDelGrafo("Ciervo") != null)
+            datosCiervo = ecosistema.obtenerDatosDelGrafo("Ciervo").numeroVivosInicioSemana - ecosistema.obtenerDatosDelGrafo("Ciervo").numVivosSemanaPasada;
+        if(ecosistema.obtenerDatosDelGrafo("Insectos") != null)
+            datosInsectos = ecosistema.obtenerDatosDelGrafo("Insectos").numeroVivosInicioSemana - ecosistema.obtenerDatosDelGrafo("Insectos").numVivosSemanaPasada;
+        if(ecosistema.obtenerDatosDelGrafo("Frutas") !=null)
+            datosFrutas = ecosistema.obtenerDatosDelGrafo("Frutas").numeroVivosInicioSemana - ecosistema.obtenerDatosDelGrafo("Frutas").numVivosSemanaPasada;
+        if(ecosistema.obtenerDatosDelGrafo("Plantas") != null)
+            datosHierbas = ecosistema.obtenerDatosDelGrafo("Plantas").numeroVivosInicioSemana - ecosistema.obtenerDatosDelGrafo("Plantas").numVivosSemanaPasada;
 
-        datosZorro = ecosistema.obtenerDatosDelGrafo("Zorro").numeroVivosInicioSemana - ecosistema.obtenerDatosDelGrafo("Zorro").numVivosSemanaPasada;
-        datosLobo = ecosistema.obtenerDatosDelGrafo("Lobo").numeroVivosInicioSemana - ecosistema.obtenerDatosDelGrafo("Lobo").numVivosSemanaPasada;
-        datosCiervo = ecosistema.obtenerDatosDelGrafo("Ciervo").numeroVivosInicioSemana - ecosistema.obtenerDatosDelGrafo("Ciervo").numVivosSemanaPasada;
-        datosInsectos = ecosistema.obtenerDatosDelGrafo("Insectos").numeroVivosInicioSemana - ecosistema.obtenerDatosDelGrafo("Insectos").numVivosSemanaPasada;
-        datosFrutas = ecosistema.obtenerDatosDelGrafo("Frutas").numeroVivosInicioSemana - ecosistema.obtenerDatosDelGrafo("Frutas").numVivosSemanaPasada;
-        datosHierbas = ecosistema.obtenerDatosDelGrafo("Plantas").numeroVivosInicioSemana - ecosistema.obtenerDatosDelGrafo("Plantas").numVivosSemanaPasada;
         int maximo = 3;
         int x = 0;
         int random = 0;
 
-        if (datosCiervo > 0 && maximo >= 0 )
+        if (ecosistema.obtenerDatosDelGrafo("Ciervo") != null && datosCiervo > 0 && maximo >= 0 )
         {
             maximo--;
             random = Random.Range(1, itemDatabase.itemsCiervo.Count);
@@ -88,7 +95,7 @@ public class JefeAldeaMisiones : MonoBehaviour {
 
         }
 
-        if (datosInsectos > 0 && maximo >= 0)
+        if (ecosistema.obtenerDatosDelGrafo("Insectos") != null && datosInsectos > 0 && maximo >= 0)
         {
             maximo--;
             random = Random.Range(1, itemDatabase.itemsInsectos.Count);
@@ -101,7 +108,7 @@ public class JefeAldeaMisiones : MonoBehaviour {
             }
         }
 
-        if (datosFrutas > 0 && maximo >= 0)
+        if (ecosistema.obtenerDatosDelGrafo("Frutas") != null && datosFrutas > 0 && maximo >= 0)
         {
             maximo--;
             random = Random.Range(1, itemDatabase.itemsFrutas.Count);
@@ -114,8 +121,9 @@ public class JefeAldeaMisiones : MonoBehaviour {
                 Debug.Log("Frutas");
             }
         }
+        
 
-        if (datosHierbas > 0 && maximo >= 0)
+        if (ecosistema.obtenerDatosDelGrafo("Plantas") != null && datosHierbas > 0 && maximo >= 0)
         {
             maximo--;
             random = Random.Range(1, itemDatabase.itemsHierbas.Count);
@@ -128,7 +136,7 @@ public class JefeAldeaMisiones : MonoBehaviour {
             }
         }
 
-        if (datosZorro > 0 && maximo >= 0)
+        if (ecosistema.obtenerDatosDelGrafo("Zorro") != null && datosZorro > 0 && maximo >= 0)
         {
             maximo--;
             random = Random.Range(1, itemDatabase.itemsZorro.Count);
@@ -142,7 +150,7 @@ public class JefeAldeaMisiones : MonoBehaviour {
             }
         }
 
-        if (datosLobo > 0 && maximo >= 0)
+        if (ecosistema.obtenerDatosDelGrafo("Lobo") != null && datosLobo > 0 && maximo >= 0)
         {
             maximo--;
             random = Random.Range(1, itemDatabase.itemsLobo.Count);

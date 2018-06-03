@@ -66,7 +66,7 @@ public class EventosDeAnimalesEspeciales : MonoBehaviour {
             return;
         }
 
-        if (Random.value > 0/*.8*/ && !kodamaAparecido) {//0.8
+        if (Random.value > 0.8 && !kodamaAparecido) {//0.8
             aparicion = true;
             eventoKodamaTipo2 = true;
             ObjetoRecibido = false;

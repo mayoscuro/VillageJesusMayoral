@@ -17,6 +17,8 @@ public class Cocinero : MonoBehaviour {
     int camino4 = 0;
     bool cocinas = false;
     bool alHuerto = false;
+
+    private bool hablando;
     // Use this for initialization
     void Start () {
         nav = GetComponent<NavMeshAgent>();
@@ -33,12 +35,14 @@ public class Cocinero : MonoBehaviour {
     {//Se llama desde el flowChart (Dialogos).
         nav.isStopped = true;
         anim.SetBool("Talking", true);
+        hablando = true;
     }
 
     public void reanudarRutaDespuesDeHablar()
     {
         nav.isStopped = false;
         anim.SetBool("Talking", false);
+        hablando = false;
     }
 
     // Update is called once per frame
@@ -67,7 +71,7 @@ public class Cocinero : MonoBehaviour {
 
     private void recorrerNodos(List<Transform> listaNodos,ref int x) {
         if (!nav.pathPending) {
-            if (x < listaNodos.Count)
+            if (x < listaNodos.Count && !hablando)
             {
                 anim.SetBool("Walking", true);
                 // Debug.Log("rotando y tal");
@@ -92,7 +96,7 @@ public class Cocinero : MonoBehaviour {
                 anim.SetBool("Walking", false);
             }*/
 
-            if (nav.remainingDistance < 0.5f && x < listaNodos.Count && !cocinas)
+            if ( nav.remainingDistance < 0.5f && x < listaNodos.Count && !cocinas)
             {
                 //Debug.Log("Recorriendo");
                 nav.SetDestination(listaNodos[x].position);
@@ -126,7 +130,7 @@ public class Cocinero : MonoBehaviour {
     }
 
     void recorrerNodoEnCocina() {
-        if (nav.remainingDistance < 0.4f)
+        if (nav.pathPending && nav.remainingDistance < 0.4f)
         {
             CancelInvoke("recorrerNodoEnCocina");
             anim.SetBool("Walking", false);

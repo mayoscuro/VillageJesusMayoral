@@ -17,13 +17,13 @@ public class PolluelosReyIA : MonoBehaviour {
 
         nav.SetDestination(centro.position);
 
-        InvokeRepeating("soltarPluma", 50,50);
+        InvokeRepeating("soltarPluma", 50,120);
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if (nav.remainingDistance < Random.Range(0.5f, 1.5f)) {
-            Vector3 newPosition = RandomNavmeshLocation(Random.Range(20,30));
+        if (!nav.pathPending && nav.remainingDistance < Random.Range(0.5f, 1.5f)) {
+            Vector3 newPosition = RandomNavmeshLocation(Random.Range(20,40));
             nav.SetDestination(newPosition);
         }
 		
@@ -32,19 +32,19 @@ public class PolluelosReyIA : MonoBehaviour {
     public Vector3 RandomNavmeshLocation(float radius)
     {
         Vector3 randomDirection = Random.insideUnitSphere * radius;
-        randomDirection = centro.transform.position;
+        randomDirection += centro.transform.position;
         NavMeshHit hit;
         Vector3 finalPosition = Vector3.zero;
         if (NavMesh.SamplePosition(randomDirection, out hit, radius, 1))
         {
             finalPosition = hit.position;
-            finalPosition.x += Random.Range(0, 10);
-            finalPosition.z += Random.Range(0, 20);
+            finalPosition.x += Random.Range(0, 20);
+            finalPosition.z += Random.Range(0, 30);
         }
         return finalPosition;
     }
     private void soltarPluma() {
-        if (Random.value > 0.7f) {
+        if (Random.value > 0.8f) {
             GameObject plumaPollueloObj = Instantiate(plumaPolluelo);
             plumaPollueloObj.transform.position = transform.position;
         }

@@ -28,11 +28,23 @@ public class Aldeana : MonoBehaviour {
 
     public AldeanaCollider colliderAldeana;
 
+    bool hablando;
+    int animacion;
+
     public void pararRutaParaHablar()
     {//Se llama desde el flowChart (Dialogos).
         nav.isStopped = true;
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Walk")) {
+            animacion = 1;
+        } else if (anim.GetCurrentAnimatorStateInfo(0).IsName("Talk")) {
+            animacion = 2;
+        }
+        else {
+            animacion = 3;
+        }
         anim.SetBool("Walk", false);
         anim.SetBool("Talk", true);
+        hablando = true;
         //anim.SetBool("isIdle", true);
     }
 
@@ -40,8 +52,24 @@ public class Aldeana : MonoBehaviour {
     {
         nav.isStopped = false;
         //anim.SetBool("isIdle", false);
-        anim.SetBool("Walk", true);
-        anim.SetBool("Talk", false);
+        
+        
+        hablando = false;
+
+        if (animacion == 1)
+        {
+            anim.SetBool("Talk", false);
+            anim.SetBool("Walk", true);
+        }
+        else if (animacion == 2)
+        {
+            anim.SetBool("Walk", false);
+            anim.SetBool("Talk", true);
+        }
+        else {
+            anim.SetBool("Walk", false);
+            anim.SetBool("Talk", false);
+        }
     }
 
     public enum tareas {
@@ -60,6 +88,7 @@ public class Aldeana : MonoBehaviour {
         {
             caminoDeVuelta.Add(caminoALaAldea[y]);
         }
+
         //InvokeRepeating("customUpdate", 0, 1);
     }
 
@@ -130,7 +159,7 @@ public class Aldeana : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if (DayNightController.day)
+        if (DayNightController.day && !hablando)
         {
             camino6 = 0;//Se reinicia el camino de por la noche.
             if (cuidarDelHuerto && !llegado)
@@ -154,7 +183,7 @@ public class Aldeana : MonoBehaviour {
                 recorrerNodos(caminoAHuerto, ref camino4);
             }
         }
-        else {
+        else if(!hablando) {
             camino1 = 0;//Se reinician todos los caminos y booleanos usados durante el dia.
             camino2 = 0;
             camino3 = 0;
@@ -195,18 +224,18 @@ public class Aldeana : MonoBehaviour {
             // Smoothly rotate towards the target point.
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, speedRotation * Time.deltaTime);
         }
-        else if (nav.remainingDistance < 0.4f && primeraTarea && DayNightController.day)
+        else if (!nav.pathPending && nav.remainingDistance < 0.4f && primeraTarea && DayNightController.day)
         {
             primeraTarea = false;
             Debug.Log("Decidiendo");
             nuevaTareaAleatoria();
         }
-        else if (nav.remainingDistance < 0.4f && tarea == tareas.huerto && DayNightController.day && !cuidarDelHuerto)
+        else if (!nav.pathPending && nav.remainingDistance < 0.4f && tarea == tareas.huerto && DayNightController.day && !cuidarDelHuerto)
         {
             cuidarDelHuerto = true;
             Debug.Log("Huerto");
         }
-        else if(nav.remainingDistance < 0.4f && tarea == tareas.hablarCocinero && DayNightController.day && !hablarCocinero) {
+        else if(!nav.pathPending && nav.remainingDistance < 0.4f && tarea == tareas.hablarCocinero && DayNightController.day && !hablarCocinero) {
             hablarCocinero = true;
             anim.SetBool("Walk", false);
             anim.SetBool("Talk", true);
@@ -214,7 +243,7 @@ public class Aldeana : MonoBehaviour {
             Debug.Log("cocinero");
             
         }
-        else if (nav.remainingDistance < 0.4f && tarea == tareas.hablarJefeAldea && DayNightController.day && !hablarConJefe)
+        else if (!nav.pathPending && nav.remainingDistance < 0.4f && tarea == tareas.hablarJefeAldea && DayNightController.day && !hablarConJefe)
         {
             hablarConJefe = true;
             anim.SetBool("Walk", false);

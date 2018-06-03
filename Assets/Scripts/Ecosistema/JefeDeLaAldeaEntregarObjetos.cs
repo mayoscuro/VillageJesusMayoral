@@ -47,7 +47,7 @@ public class JefeDeLaAldeaEntregarObjetos : MonoBehaviour {
         } else if (puntosConseguidos >= 6001 && puntosConseguidos <= 8000) {
             rank = 4;
             textoRango.text = "" + rank;
-        } else if (puntosConseguidos >= 8001 && puntosConseguidos <= 10000) {
+        } else if (puntosConseguidos >= 8001) {
             rank = 5;
             textoRango.text = "" + rank;
         }

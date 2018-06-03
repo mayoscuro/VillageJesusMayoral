@@ -92,7 +92,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         {
             if (!recolectando)
             {
-                if (Input.GetKeyDown(KeyCode.Q)) {
+                /*if (Input.GetKeyDown(KeyCode.Q)) {
                     m_Animator.SetTrigger("Esquivar");
                     esquivar = true;
                 }
@@ -101,7 +101,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                     
                     transform.Translate(transform.forward * 0.15f); // evasion = full speed forward
                     //moveSpeed = evadeDistance / evadeTime;
-                }
+                }*/
 
                 if (m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Esquivar") && m_Animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f)
                 {
