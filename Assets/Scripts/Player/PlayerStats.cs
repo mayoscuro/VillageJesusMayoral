@@ -75,8 +75,8 @@ public class PlayerStats: MonoBehaviour {
 
     void restarResistencia()
     {
-        sliderResistencia.value -= 0.01f;
-        if (sliderResistencia.value == 0)
+        sliderResistencia.value -= 0.006f;
+        if (sliderResistencia.value == 0 || playerController.corriendo)
         {
             CancelInvoke();
             playerController.corriendo = true;
